@@ -1,24 +1,35 @@
 class Cell{
     constructor(status){
         this.status = status
-        this.neighbours = 0
+        this.neighbors = 0
     }
     
     change_status(){
-        if (this.neighbours < 2){
+        if (this.neighbors <= 2){
             this.status = "."
         }
 
-        if (this.neighbours > 3){
+        if (this.neighbors > 3){
             this.status = "."
         }
-        if (this.neighbours == 3){
+        if (this.neighbors == 3){
             this.status = "*"
         }
     }
 
     get_status(){
         return this.status
+    }
+    get_neighbors(){
+        return this.neighbors
+    }
+    
+    add_neighbors(){
+        this.neighbors++
+    }
+
+    reset_neighbors(){
+        this.neighbors = 0
     }
     
 }

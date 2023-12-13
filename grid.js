@@ -45,46 +45,84 @@ class Grid{ //ayudadios
             console.log(this.generation[i].join('\t'))
         }
     }
-
-    // check_cell_neighbors(){
-        
-    // }
-
-    check_all_neighbors(){
-        for (let i = 0; i < this.width; i++) {
-            for(let j= 0; j< this.height; j++){
-                if(i !== 0){
-                    if((this.matrix[i-1][j-1]).get_status() == "*"){ //arriba izzq
-                        this.matrix[i][j].neighbors++
-                    } else if((this.matrix[i-1][j]).get_status() == "*"){ // arriba
-                        this.matrix[i][j].neighbors++
-                    } else if((this.matrix[i-1][j+1]).get_status() == "*"){ // arriba der
-                        this.matrix[i][j].neighbors++
-                    }
-                }
-                //A partir de aqui
-                if(j !== this.height || (this.matrix[i][j+1]).get_status() == "*")
-                
-                if(i)
-
-                if(i !== 0 || j !== 0) {
-
-                }
+    change_grid_status(){
+        for(let i = 0; i < this.width; i++){
+            for(let j = 0; j< this.height;j++){
+                this.matrix[i][j].change_status()
             }
-            
         }
     }
+    check_all_neighbors(){
+        for(let i = 0; i < this.width; i++){
+            for(let j = 0; j< this.height;j++){
+                if(this.matrix[i][j].get_neighbors() > 0){
+                    return true
+                } 
+            }
+        }
+    }
+
+
+    update_neighbors(){
+        
+        for (let i = 0; i < this.width; i++) { //neighbors
+            for(let j= 0; j< this.height; j++){
+                this.matrix[i][j].reset_neighbors()
+                if(i !== 0){
+                    if(j !== 0){
+                        if(this.matrix[i-1][j-1].get_status() == "*") {
+                            this.matrix[i][j].add_neighbors()
+                            
+                        }
+                        
+                    }
+                    if(this.matrix[i-1][j].get_status() == "*"){
+                        this.matrix[i][j].add_neighbors()
+                    }
+                    if(j!==this.height-1){
+                        if(this.matrix[i-1][j+1].get_status() == "*"){
+                            this.matrix[i][j].add_neighbors()
+                        }
+                    }
+                    
+                }
+                if(j!==this.height-1){
+                    if(this.matrix[i][j+1].get_status()=="*"){
+                        this.matrix[i][j].add_neighbors()
+                    }
+                    if(i !== this.width -1){
+                        if(this.matrix[i+1][j+1].get_status()=="*"){
+                            this.matrix[i][j].add_neighbors()
+                        }
+                    }
+
+                   
+                }
+                if(i!==this.width-1){
+                    if(this.matrix[i+1][j].get_status()=="*"){
+                        this.matrix[i][j].add_neighbors()
+                    }
+                    if(j!== 0){
+                        if(this.matrix[i+1][j-1].get_status()=="*"){
+                            this.matrix[i][j].add_neighbors()
+                        }
+                    }
+                }
+                if(j!==0){
+                    if(this.matrix[i][j-1].get_status()=="*"){
+                        this.matrix[i][j].add_neighbors()
+                    }
+                }
+                
+                
+            }
+
+            
+            
+        }
+        
+    }
   
-
-
-
-    
 }
 
-const grid = new Grid(3,2)
-
-
-grid.create_grid()
-grid.create_generation()
-//grid.create_new_cell()
-grid.show_grid()
+module.exports = Grid
