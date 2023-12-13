@@ -21,7 +21,7 @@ class Grid{ //ayudadios
         }
     }
 
-//
+//////
 
     _getRandomInt(max) {
         return Math.floor(Math.random() * max);
