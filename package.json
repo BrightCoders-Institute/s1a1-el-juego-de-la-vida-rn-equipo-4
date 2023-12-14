@@ -1,0 +1,19 @@
+{
+  "name": "s1a1-el-juego-de-la-vida-rn-equipo-4",
+  "version": "1.0.0",
+  "description": "BrightCoders Semana 1 Equipo 4",
+  "main": "Game.js",
+  "scripts": {
+    "lint": "eslint",
+    "start": "node Game.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-fix":"eslint --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2"
+  }
+}
