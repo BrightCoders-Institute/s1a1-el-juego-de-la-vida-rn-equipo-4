@@ -1,0 +1,10 @@
+{
+    "presets": ["@babel/preset-env"],
+    "overrides": [
+      {
+        "test": ["**/*.js", "**/*.mjs"],
+        "plugins": []
+      }
+    ]
+  }
+  
