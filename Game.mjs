@@ -1,5 +1,5 @@
 import { Grid } from "./Grid.mjs"
-class Game{
+export class Game{
     constructor(gridX, gridY){
         this.gridX = gridX
         this.gridY = gridY
