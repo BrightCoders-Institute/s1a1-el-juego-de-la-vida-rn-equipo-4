@@ -20,7 +20,7 @@
 
 Esta actividad tiene como objetivos:
 
-- Nivelar habilidades en programación con Javascript / Typescript para asegurar una base sólida de conocimientos en el lenguaje.
+- Nivelar habilidades en programación con Javascript / Typescript para asegurar una base sólida de conocimientos en el lenguaje. 
 - Introducir el uso de Linters, herramientas que permiten mantener un código limpio y consistente, detectando posibles errores y mejorando la calidad del código.
 - Introducir el desarrollo basado en pruebas, promoviendo la escritura de pruebas unitarias para garantizar la funcionalidad y la robustez del código desarrollado.
 - Introducir la dinámica de Mob Programming, fomentando la colaboración y el trabajo en equipo mediante la programación conjunta, donde todos los miembros participan activamente y se turnan en la escritura de código.
